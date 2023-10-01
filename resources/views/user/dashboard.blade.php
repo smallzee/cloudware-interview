@@ -13,7 +13,7 @@
                     </div>
                 </div>
                 <h4>N{!! number_format(auth()->user()->balance,2) !!}</span> </h4>
-                <p class="text-muted mb-4">Balance</p>
+                <p class="text-muted mb-4">Available Balance</p>
             </div>
         </div>
     </div>

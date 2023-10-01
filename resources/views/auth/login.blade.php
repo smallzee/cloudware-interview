@@ -10,7 +10,7 @@
 
                 <ul class="breadcrumb-nav">
                     <li><a href="{{url('/')}}">Home</a></li>
-                    <li class="active">Sign In</li>
+                    <li class="active">{{ $page_title }}</li>
                 </ul>
             </div>
         </div>

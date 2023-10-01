@@ -4,6 +4,18 @@
 
     <div class="row">
         <div class="col-xxl-12">
+            <div class="card overflow-hidden">
+                <div class="card-body">
+                    <div class="avatar-sm float-end">
+                        <div class="avatar-title bg-primary-subtle text-primary fs-3xl rounded">
+                            <i class="ph ph-briefcase"></i>
+                        </div>
+                    </div>
+                    <h4>N{!! number_format(auth()->user()->balance,2) !!}</span> </h4>
+                    <p class="text-muted mb-4">Available Balance</p>
+                </div>
+            </div>
+
             <div class="card border overflow-hidden card-border-warning">
                 <div class="card-header">
                     <h6 class="card-title mb-0">{{ $page_title }}</h6>

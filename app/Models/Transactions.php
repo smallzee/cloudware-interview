@@ -9,4 +9,8 @@ class Transactions extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    function banks(){
+        return $this->hasOne(Banks::class,'id','bank_id');
+    }
 }
