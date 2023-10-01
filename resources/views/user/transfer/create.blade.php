@@ -28,6 +28,7 @@
                             <span class="text-danger response"></span>
                         </div>
 
+                        <input type="hidden" name="recipient_id" id="recipient_id">
 
                         <div class="form-group">
                             <label for="" class="form-label">Account Name</label>
@@ -79,8 +80,6 @@
                 timeout : 45000,
                 success : function (data) {
 
-                    console.log(data);
-
                     if(data.status == true){
                         $("#account_name").val(data.message);
                         $("#proceed").removeAttr('disabled');
@@ -88,7 +87,8 @@
                     }
 
                     $(".response").text(data.message);
-                    $("##account_name").val("");
+                    $("#account_name").val("");
+                    $("#recipient_id").val(data.recipient_id);
                     $("#proceed").prop('disabled',true);
 
                     return;

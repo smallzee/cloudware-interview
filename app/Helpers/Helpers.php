@@ -41,6 +41,7 @@ if (!function_exists('ResolveBankAccount')){
         if (@$response_array['error'] == true){
             return array(
                 'status' => false,
+                'recipient_id'=>0,
                 'message'=>$response_array['message']
             );
         }else{
@@ -48,6 +49,7 @@ if (!function_exists('ResolveBankAccount')){
 
             return array(
                 'status' => true,
+                'recipient_id'=>0,
                 'message'=>@$responseBody['account_name']
             );
         }

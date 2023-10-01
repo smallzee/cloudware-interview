@@ -53,7 +53,7 @@ class TransactionController extends Controller
                 return response()->json(['status'=>false,'message'=>'The account number is not associated to '.$bank->name.', please check and try again']);
             }
 
-            return response()->json(['status'=>true,'message'=>ucwords($user[0]->name)]);
+            return response()->json(['status'=>true,'message'=>ucwords($user[0]->name),'recipient_id'=>$user[0]->id]);
         }
 
         $ResolveBankAccount = ResolveBankAccount(array(
