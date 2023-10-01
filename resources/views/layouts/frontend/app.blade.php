@@ -30,8 +30,17 @@
     <!--====== Responsive CSS ======-->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}" />
 </head>
-<body>
+<body class="app-landing-page">
 
+<div id="preloader">
+{{--    <img class="preloader-image" width="60" src="assets/img/preloader-logo.png" alt="preloader" />--}}
+</div>
+
+@include('layouts.frontend.header')
+
+@stack('content')
+
+@include('layouts.frontend.footer')
 
 <!--====== Jquery ======-->
 <script src="{{asset('assets/frontend/js/jquery-3.6.0.min.js')}}"></script>
