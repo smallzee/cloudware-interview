@@ -45,6 +45,10 @@
                 </li>
 
 
+                <li class="nav-item">
+                    <a href="{{url('user/logout')}}" class="nav-link menu-link text-danger"> <i class="ph-sign-out"></i> <span data-key="t-logout">Logout</span> </a>
+                </li>
+
             </ul>
         </div>
         <!-- Sidebar -->

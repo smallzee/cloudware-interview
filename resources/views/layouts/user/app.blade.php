@@ -23,9 +23,20 @@
     <!-- custom Css-->
     <link href="{{asset('assets/users/css/custom.min.css')}}" rel="stylesheet" type="text/css">
 
+    <script src="{{asset('assets/frontend/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
+
+    <style>
+        .form-group{
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
 
+@include('flash')
 <!-- Begin page -->
 <div id="layout-wrapper">
     @include('layouts.user.header')

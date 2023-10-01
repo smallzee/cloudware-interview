@@ -23,6 +23,11 @@ Route::get('/', function () {
 Route::group(['prefix'=>'user'], function (){
     Route::middleware(['IsUser'])->group(function (){
         Route::resource('dashboard', \App\Http\Controllers\user\DashboardController::class);
-        Route::resource('transfer', \App\Http\Controllers\user\TransactionController::class);
+        Route::resource('transfer', \App\Http\Controllers\user\TransferController::class);
+    });
+
+    Route::get('/logout', function () {
+        auth()->logout();
+        return redirect(route('login'))->with('alert_success','You have successfully logged out');
     });
 });
