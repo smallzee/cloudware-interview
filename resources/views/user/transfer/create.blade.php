@@ -37,12 +37,12 @@
 
                         <div class="form-group">
                             <label for="" class="form-label">Amount</label>
-                            <input type="number" class="form-control" required placeholder="Amount" name="amount" inputmode="numeric" id="amount">
+                            <input type="number" class="form-control" max="{{ auth()->user()->balance }}" required placeholder="Amount" name="amount" inputmode="numeric" id="amount">
                         </div>
 
 
                         <div class="form-group">
-                            <input type="submit" class="btn btn-primary" value="Proceed" disabled name="" id="proceed">
+                            <input type="submit" class="btn btn-primary" value="Submit" disabled name="" id="proceed">
                         </div>
                     </form>
 
@@ -65,21 +65,23 @@
 
         $("#account_number").blur(function (e) {
             var account_numer = $(this).val();
-            // AmagiLoader.show();
+             AmagiLoader.show();
 
             $.ajax({
-                url : "{{route('transaction.store')}}",
+                url : "{{route('transfer.update',1)}}",
                 type : 'post',
                 dataType : 'json',
                 data : {
                     '_token' : '{{csrf_token()}}',
                     'account_number' : account_numer,
-                    'bank_id' : bank_id
+                    'bank_id' : bank_id,
+                    '_method' :'PATCH'
                 },
                 cache : false,
                 timeout : 45000,
                 success : function (data) {
 
+                    AmagiLoader.hide();
                     if(data.status == true){
                         $("#account_name").val(data.message);
                         $("#proceed").removeAttr('disabled');
@@ -95,6 +97,7 @@
                 },
 
                 error : function (er) {
+                    AmagiLoader.hide();
                     $(".response").text("Network error");
                 }
             });

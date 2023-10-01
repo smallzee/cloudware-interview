@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banks;
+use App\Models\Transactions;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TransferController extends Controller
 {
@@ -39,6 +43,56 @@ class TransferController extends Controller
     public function store(Request $request)
     {
         //
+        $validator = Validator::make($request->all(),[
+            'bank'=>'required|gt:0',
+            'account_number'=>'required',
+            'account_name'=>'required',
+            'amount'=>'required|gt:0'
+        ]);
+
+        if ($validator->fails()){
+            return back()->with('alert_error',$validator->errors()->first());
+        }
+
+        $recipient_id = $request->recipient_id;
+        $amount = $request->amount;
+
+        $bank = Banks::find($request->bank);
+        $user = auth()->user();
+
+        $balance = $user->balance;
+        $user_id = $user->id;
+
+        if ($balance < $amount){
+            return back()->with('alert_error','Insufficient fund');
+        }
+
+        if ($recipient_id > 0 && isset($recipient_id)){
+            if ($user_id == $recipient_id){
+                return back()->with('alert_error','Ops sorry, you cannot transfer money to yourself');
+            }
+
+            $recipient = User::find($recipient_id);
+            $recipient->balance+=$amount;
+            $recipient->save();
+        }
+
+
+        $user->balance-=$amount;
+        $user->save();
+
+
+        Transactions::create([
+            'user_id'=>$user_id,
+            'amount'=>$amount,
+            'reference'=>date('Y').uniqid(),
+            'bank_id'=>$bank->id,
+            'account_name'=>$request->account_name,
+            //'account_number'=>$request->account_number
+        ]);
+
+        return back()->with('alert_success','Your transaction was sent successful');
+
     }
 
     /**
@@ -73,6 +127,31 @@ class TransferController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $bank_id = $request->bank_id;
+        $account_number = $request->account_number;
+
+        if ($bank_id == 0){
+            return  response()->json(['status'=>false,'message'=>'Bank is required']);
+        }
+
+        $bank = Banks::find($bank_id);
+
+        if ($bank_id == 1){
+            $user = User::where('account_number',$account_number)->get();
+            if ($user->count() == 0){
+                return response()->json(['status'=>false,'message'=>'The account number is not associated to '.$bank->name.', please check and try again']);
+            }
+
+            return response()->json(['status'=>true,'message'=>ucwords($user[0]->name),'recipient_id'=>$user[0]->id]);
+        }
+
+        $ResolveBankAccount = ResolveBankAccount(array(
+            'bankCode'=>$bank->bank_code,
+            'accountNumber'=>$account_number
+        ));
+
+        return  $ResolveBankAccount;
     }
 
     /**

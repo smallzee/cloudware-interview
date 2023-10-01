@@ -17,6 +17,8 @@ class TransactionController extends Controller
     public function index()
     {
         //
+        $page_title = "All Transactions";
+        return  view('user.transactions.index',compact('page_title'));
     }
 
     /**
@@ -38,32 +40,6 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         //
-        $bank_id = $request->bank_id;
-        $account_number = $request->account_number;
-
-        if ($bank_id == 0){
-            return  response()->json(['status'=>false,'message'=>'Bank is required']);
-        }
-
-        $bank = Banks::find($bank_id);
-
-        if ($bank_id == 1){
-            $user = User::where('account_number',$account_number)->get();
-            if ($user->count() == 0){
-                return response()->json(['status'=>false,'message'=>'The account number is not associated to '.$bank->name.', please check and try again']);
-            }
-
-            return response()->json(['status'=>true,'message'=>ucwords($user[0]->name),'recipient_id'=>$user[0]->id]);
-        }
-
-        $ResolveBankAccount = ResolveBankAccount(array(
-            'bankCode'=>$bank->bank_code,
-            'accountNumber'=>$account_number
-        ));
-
-        return  $ResolveBankAccount;
-
-
     }
 
     /**

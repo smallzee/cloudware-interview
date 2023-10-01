@@ -41,7 +41,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="apps-email.html" class="nav-link menu-link"> <i class="ph-envelope"></i> <span data-key="t-email">Email</span> </a>
+                    <a href="{{route('transactions.index')}}" class="nav-link menu-link"> <i class="ph-money"></i> <span data-key="t-email">Transactions</span> </a>
                 </li>
 
 
