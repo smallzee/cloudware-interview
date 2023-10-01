@@ -12,10 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
-    return view('auth.login');
+    $page_title = "Home";
+    return view('home',compact('page_title'));
 });
-Auth::routes();
 
 
