@@ -10,9 +10,6 @@
                         <h1 class="hero-title wow fadeInLeft" data-wow-delay="0.3s">
                             Solutions <br> Your Problem <br> <span>In One</span> Hand
                         </h1>
-                        <p class="wow fadeInLeft" data-wow-delay="0.4s">
-                            Sed ut perspiciatis unde omnis iste natus error voluptate accus antium doloremque laudantium totam aperiam
-                        </p>
 
                     </div>
                 </div>
