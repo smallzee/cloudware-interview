@@ -12,29 +12,8 @@
                         <i class="ph ph-briefcase"></i>
                     </div>
                 </div>
-                <h4>$<span class="counter-value" data-target="368.24">0</span>M </h4>
-                <p class="text-muted mb-4">Annual Profit</p>
-                <p class="text-muted mb-0"><span class="badge bg-success-subtle text-success"><i class="bi bi-arrow-up"></i> 4.65%</span> vs last month</p>
-            </div>
-            <div class="progress progress-sm rounded-0" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar" style="width: 76%"></div>
-            </div>
-        </div>
-    </div><!--end col-->
-    <div class="col-xxl col-sm-6">
-        <div class="card overflow-hidden">
-            <div class="card-body">
-                <div class="avatar-sm float-end">
-                    <div class="avatar-title bg-secondary-subtle text-secondary fs-3xl rounded">
-                        <i class="ph ph-wallet"></i>
-                    </div>
-                </div>
-                <h4>$<span class="counter-value" data-target="1454.71">0</span>k </h4>
-                <p class="text-muted mb-4">Daily average income</p>
-                <p class="text-muted mb-0"><span class="badge bg-success-subtle text-success"><i class="bi bi-arrow-up"></i> 1.33%</span> vs last month</p>
-            </div>
-            <div class="progress progress-sm rounded-0" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-secondary" style="width: 88%"></div>
+                <h4>N<span class="counter-value" data-target="{!! number_format(auth()->user()->balance,2) !!}"></span> </h4>
+                <p class="text-muted mb-4">Balance Profit</p>
             </div>
         </div>
     </div><!--end col-->
@@ -49,10 +28,6 @@
                 </div>
                 <h4><span class="counter-value" data-target="1742"></span></h4>
                 <p class="text-muted mb-4">Annual Deals</p>
-                <p class="text-muted mb-0"><span class="badge bg-success-subtle text-success"><i class="bi bi-arrow-up"></i> 7.93%</span> vs last month</p>
-            </div>
-            <div class="progress progress-sm rounded-0" role="progressbar" aria-valuenow="83" aria-valuemin="0" aria-valuemax="100">
-                <div class="progress-bar bg-warning" style="width: 83%"></div>
             </div>
         </div>
     </div><!--end col-->
