@@ -93,6 +93,7 @@
                 timeout : 45000,
                 success : function (data) {
 
+                    console.log(data);
                     AmagiLoader.hide();
                     if(data.status == true){
                         $("#account_name").val(data.message);

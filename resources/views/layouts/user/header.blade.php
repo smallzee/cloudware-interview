@@ -44,6 +44,9 @@
                     <a href="{{route('transactions.index')}}" class="nav-link menu-link"> <i class="ph-money"></i> <span data-key="t-email">Transactions</span> </a>
                 </li>
 
+                <li class="nav-item">
+                    <a href="{{route('sunset-sunrise.index')}}" class="nav-link menu-link"> <i class="ph-alarm"></i> <span data-key="t-email">Sunset & Sunrise Alarm</span> </a>
+                </li>
 
                 <li class="nav-item">
                     <a href="{{url('user/logout')}}" class="nav-link menu-link text-danger"> <i class="ph-sign-out"></i> <span data-key="t-logout">Logout</span> </a>

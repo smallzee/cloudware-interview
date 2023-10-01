@@ -12,11 +12,9 @@
         <div class="footer-widgets p-t-80 p-b-30">
             <div class="row">
                 <!-- Single Footer Widget -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="col-lg-6 col-md-6 col-sm-6">
                     <div class="widget text-block-widget">
                         <h5 class="widget-title">About {{ __('CloudWare Interview') }}</h5>
-                        <p>Sed ut perspiciatis undmnis iste natus error sit voluptatem accusantium dolore udantiuy totam rem aperiam.</p>
-
                         <ul class="social-links bordered-style m-t-20">
                             <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fab fa-twitter"></i></a></li>
@@ -30,28 +28,10 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="d-lg-flex justify-content-center">
                         <div class="widget nav-widget">
-                            <h5 class="widget-title">Resources</h5>
-                            <ul>
-                                <li><a href="about.html">Saas Development</a></li>
-                                <li><a href="about.html">Our Products</a></li>
-                                <li><a href="about.html">User Strategy</a></li>
-                                <li><a href="about.html">Blogs &amp; Guides</a></li>
-                                <li><a href="about.html">Premium Support</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Single Footer Widget -->
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="d-lg-flex justify-content-center">
-                        <div class="widget nav-widget">
                             <h5 class="widget-title">Company</h5>
                             <ul>
-                                <li><a href="about.html">About Landio</a></li>
-                                <li><a href="about.html">Contact &amp; Support</a></li>
-                                <li><a href="services.html">Success History</a></li>
-                                <li><a href="services.html">Setting &amp; Privacy</a></li>
-                                <li><a href="services.html">Company History</a></li>
+                                <li><a href="#">About CloudWare Interview</a></li>
+                                <li><a href="#">Contact &amp; Support</a></li>
                             </ul>
                         </div>
                     </div>
@@ -64,7 +44,7 @@
                             <li>
                                 <a href="#">
                                     <i class="fal fa-map-marker-alt"></i>
-                                    55 Old Broad Street, London, EC2M
+                                    Omoluabi Holding Building Abeere Osogbo, Osun State
                                 </a>
                             </li>
                             <li>

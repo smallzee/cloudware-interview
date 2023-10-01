@@ -25,6 +25,7 @@ Route::group(['prefix'=>'user'], function (){
         Route::resource('dashboard', \App\Http\Controllers\user\DashboardController::class);
         Route::resource('transfer', \App\Http\Controllers\user\TransferController::class);
         Route::resource('transactions', \App\Http\Controllers\user\TransactionController::class);
+        Route::resource('sunset-sunrise', \App\Http\Controllers\user\SunsetSunriseController::class);
     });
 
     Route::get('/logout', function () {

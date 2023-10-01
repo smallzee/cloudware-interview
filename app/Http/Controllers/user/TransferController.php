@@ -7,6 +7,7 @@ use App\Models\Banks;
 use App\Models\Transactions;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class TransferController extends Controller
@@ -54,8 +55,9 @@ class TransferController extends Controller
             return back()->with('alert_error',$validator->errors()->first());
         }
 
-        $recipient_id = $request->recipient_id;
+        @$recipient_data = Session::get('recipient_data');
         $amount = $request->amount;
+
 
         $bank = Banks::find($request->bank);
         $user = auth()->user();
@@ -67,7 +69,9 @@ class TransferController extends Controller
             return back()->with('alert_error','Insufficient fund');
         }
 
-        if ($recipient_id > 0 && isset($recipient_id)){
+        if (isset($recipient_data)){
+            $recipient_id = $recipient_data;
+
             if ($user_id == $recipient_id){
                 return back()->with('alert_error','Ops sorry, you cannot transfer money to yourself');
             }
@@ -143,6 +147,7 @@ class TransferController extends Controller
                 return response()->json(['status'=>false,'message'=>'The account number is not associated to '.$bank->name.', please check and try again']);
             }
 
+            Session::put('recipient_data',$user[0]->id);
             return response()->json(['status'=>true,'message'=>ucwords($user[0]->name),'recipient_id'=>$user[0]->id]);
         }
 
