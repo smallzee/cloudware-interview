@@ -14,7 +14,7 @@
                 <!-- Single Footer Widget -->
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="widget text-block-widget">
-                        <h5 class="widget-title">About Landio</h5>
+                        <h5 class="widget-title">About {{ __('CloudWare Interview') }}</h5>
                         <p>Sed ut perspiciatis undmnis iste natus error sit voluptatem accusantium dolore udantiuy totam rem aperiam.</p>
 
                         <ul class="social-links bordered-style m-t-20">
@@ -68,17 +68,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/cdn-cgi/l/email-protection#01727471716e737541666c60686d2f626e6c">
+                                <a href="mailto:support@cloudwareinterview.ng">
                                     <i class="fal fa-envelope-open-text"></i>
-                                    <span class="__cf_email__" data-cfemail="e5969095958a9791a58288848c89cb868a88">[email&#160;protected]</span>
+                                    <span>support@cloudwareinterview.ng</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="tel:+01234567899">
-                                    <i class="fal fa-phone"></i>
-                                    +012 (345) 678 99
-                                </a>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -90,12 +85,11 @@
             <div class="row align-items-center justify-content-between">
                 <div class="col-sm-auto col-12">
                     <div class="copyright-logo text-center text-sm-left">
-                        <img src="assets/img/logo-white-2.png" alt="Landio">
                     </div>
                 </div>
                 <div class="col-sm-auto col-12">
                     <p class="copyright-text text-center text-sm-right pt-4 pt-sm-0">
-                        © 2022 <a href="#">Landio</a>. All Rights Reserved
+                        &copy; {{date('Y')}} <a href="#">{{ __('CloudWare Interview Product') }}</a>. All Rights Reserved
                     </p>
                 </div>
             </div>
