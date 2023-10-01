@@ -1,5 +1,27 @@
 @extends('layouts.frontend.app')
 
+@push('content')
+    <!--====== Page title area Start ======-->
+    <section class="page-title-area">
+        <div class="container">
+            <div class="page-title-content text-center">
+                <h1 class="page-title">{{ $page_title }}</h1>
+
+                <ul class="breadcrumb-nav">
+                    <li><a href="{{url('/')}}">Home</a></li>
+                    <li class="active">{{ $page_title }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-title-effect d-none d-md-block">
+            @for($i =1; $i <= 5; $i++)
+                <img class="particle-1 animate-zoom-fade" src="{{static_asset("particle/particle-".$i.".png")}}" alt="particle {{$i}}">
+            @endfor
+        </div>
+    </section>
+    <!--====== Page title area End ======-->
+@endpush
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

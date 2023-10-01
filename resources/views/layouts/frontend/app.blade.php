@@ -33,7 +33,7 @@
 <body class="app-landing-page">
 
 <div id="preloader">
-{{--    <img class="preloader-image" width="60" src="assets/img/preloader-logo.png" alt="preloader" />--}}
+    <img class="preloader-image" width="60" src="{{static_asset('preloader-logo.png')}}" alt="preloader" />
 </div>
 
 @include('layouts.frontend.header')

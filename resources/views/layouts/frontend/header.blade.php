@@ -6,8 +6,8 @@
             <div class="header-left">
                 <div class="brand-logo">
                     <a href="{{url('')}}">
-                        <img src="#" alt="logo" class="main-logo">
-                        <img src="#" alt="logo" class="sticky-logo">
+                        <img src="{{static_asset('preloader-logo.png')}}" alt="logo" class="main-logo">
+                        <img src="{{static_asset('preloader-logo.png')}}" alt="logo" class="sticky-logo">
                     </a>
                 </div>
             </div>
@@ -56,8 +56,8 @@
         <div class="panel-overlay"></div>
         <div class="panel-inner">
             <div class="mobile-logo">
-                <a href="index.html">
-                    <img src="assets/img/logo-1.png" alt="Landio">
+                <a href="{{url('/')}}">
+                    <img src="{{static_asset('preloader-logo.png')}}" alt="Landio">
                 </a>
             </div>
             <nav class="mobile-menu">
