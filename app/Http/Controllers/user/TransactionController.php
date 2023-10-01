@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\user;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banks;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TransactionController extends Controller
@@ -36,6 +38,32 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         //
+        $bank_id = $request->bank_id;
+        $account_number = $request->account_number;
+
+        if ($bank_id == 0){
+            return  response()->json(['status'=>false,'message'=>'Bank is required']);
+        }
+
+        $bank = Banks::find($bank_id);
+
+        if ($bank_id == 1){
+            $user = User::where('account_number',$account_number)->get();
+            if ($user->count() == 0){
+                return response()->json(['status'=>false,'message'=>'The account number is not associated to '.$bank->name.', please check and try again']);
+            }
+
+            return response()->json(['status'=>true,'message'=>ucwords($user[0]->name)]);
+        }
+
+        $ResolveBankAccount = ResolveBankAccount(array(
+            'bankCode'=>$bank->bank_code,
+            'accountNumber'=>$account_number
+        ));
+
+        return  $ResolveBankAccount;
+
+
     }
 
     /**

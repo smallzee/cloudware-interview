@@ -26,8 +26,8 @@
                         <i class="ph ph-heartbeat"></i>
                     </div>
                 </div>
-                <h4>N<span class="counter-value" data-target="0"></span></h4>
-                <p class="text-muted mb-4">Annually</p>
+                <h4>{!! auth()->user()->account_number !!}</h4>
+                <p class="text-muted mb-4">Account Number</p>
             </div>
         </div>
     </div><!--end col-->
@@ -74,28 +74,7 @@
             </div>
             <div class="card-body">
                 <div id="balance_overview" data-colors='["--tb-primary", "--tb-light","--tb-secondary"]' class="apex-charts ms-n3" dir="ltr"></div>
-                <div class="table-responsive table-card mb-0 mt-2">
-                    <table class="table table-sm table-borderless align-middle text-center mb-0 table-nowrap">
-                        <tr>
-                            <td class="text-start"><i class="bi bi-diamond-fill align-baseline me-1 text-primary"></i> Total Revenue</td>
-                            <th>$795.69k</th>
-                            <td class="text-muted"><span class="text-success"><i class="bi bi-caret-up-fill align-baseline me-1"></i> 6.19%</span> than last years</td>
-                            <td class="text-end" style="width: 150px;"><a href="#!" class="icon-link icon-link-hover text-decoration-underline link-underline link-underline-opacity-0 link-underline-opacity-75-hover">View All <i class="bi bi-arrow-right"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start"><i class="bi bi-diamond-fill align-baseline me-1 text-light"></i> Total Expenses</td>
-                            <th>$415.37k</th>
-                            <td class="text-muted"><span class="text-success"><i class="bi bi-caret-up-fill align-baseline me-1"></i> 3.62%</span> than last years</td>
-                            <td class="text-end" style="width: 150px;"><a href="#!" class="icon-link icon-link-hover text-decoration-underline link-underline link-underline-opacity-0 link-underline-opacity-75-hover">View All <i class="bi bi-arrow-right"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="text-start"><i class="bi bi-diamond-fill align-baseline me-1 text-secondary"></i> Profit Ratio </td>
-                            <th>3.6%</th>
-                            <td class="text-muted"><span class="text-danger"><i class="bi bi-caret-down-fill align-baseline me-1"></i> 1.47%</span> than last years</td>
-                            <td class="text-end" style="width: 150px;"><a href="#!" class="icon-link icon-link-hover text-decoration-underline link-underline link-underline-opacity-0 link-underline-opacity-75-hover">View All <i class="bi bi-arrow-right"></i></a></td>
-                        </tr>
-                    </table>
-                </div>
+
             </div>
         </div>
     </div><!--end col-->

@@ -37,7 +37,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a href="{{route('transfer.create')}}" class="nav-link menu-link"> <i class="ph-chats"></i> <span data-key="t-chat">Transfer</span> </a>
+                    <a href="{{route('transfer.create')}}" class="nav-link menu-link"> <i class="ph-chats"></i> <span data-key="t-chat">Make a Transfer</span> </a>
                 </li>
 
                 <li class="nav-item">
