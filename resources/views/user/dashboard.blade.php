@@ -12,11 +12,11 @@
                         <i class="ph ph-briefcase"></i>
                     </div>
                 </div>
-                <h4>N<span class="counter-value" data-target="{!! number_format(auth()->user()->balance,2) !!}"></span> </h4>
-                <p class="text-muted mb-4">Balance Profit</p>
+                <h4>N{!! number_format(auth()->user()->balance,2) !!}</span> </h4>
+                <p class="text-muted mb-4">Balance</p>
             </div>
         </div>
-    </div><!--end col-->
+    </div>
 
     <div class="col-xxl">
         <div class="card overflow-hidden">
@@ -26,8 +26,8 @@
                         <i class="ph ph-heartbeat"></i>
                     </div>
                 </div>
-                <h4><span class="counter-value" data-target="1742"></span></h4>
-                <p class="text-muted mb-4">Annual Deals</p>
+                <h4>N<span class="counter-value" data-target="0"></span></h4>
+                <p class="text-muted mb-4">Annually</p>
             </div>
         </div>
     </div><!--end col-->

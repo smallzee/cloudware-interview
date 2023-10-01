@@ -33,11 +33,11 @@
                 <li class="menu-title"><span data-key="t-menu">Menu</span></li>
 
                 <li class="nav-item">
-                    <a href="apps-calendar.html" class="nav-link menu-link"> <i class="ph-calendar"></i> <span data-key="t-calendar">Calendar</span> </a>
+                    <a href="{{route('dashboard.index')}}" class="nav-link menu-link"> <i class="ph-calendar"></i> <span data-key="t-home">Dashboard</span> </a>
                 </li>
 
                 <li class="nav-item">
-                    <a href="apps-chat.html" class="nav-link menu-link"> <i class="ph-chats"></i> <span data-key="t-chat">Chat</span> </a>
+                    <a href="{{route('transfer.create')}}" class="nav-link menu-link"> <i class="ph-chats"></i> <span data-key="t-chat">Transfer</span> </a>
                 </li>
 
                 <li class="nav-item">
