@@ -1,1 +1,1 @@
-<?php
+@extends('layouts.user.app')
