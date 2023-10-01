@@ -20,6 +20,81 @@
         </div>
     </section>
     <!--====== Page title area End ======-->
+
+    <!--====== Sign In Content  ======-->
+    <section class="sign-in-section p-t-120 p-b-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10">
+                    <div class="sign-in-up-wrapper">
+                        <form action="{{route('register')}}" method="post">
+                            @csrf
+                            <div class="form-groups">
+                                <h4 class="form-title">Create Your Account</h4>
+                                <div class="field-group">
+                                    <div class="icon">
+                                        <i class="far fa-envelope"></i>
+                                    </div>
+                                    <input type="email" placeholder="Email Address" class="@error('email') is-invalid @enderror" name="email" required>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="field-group">
+                                    <div class="icon">
+                                        <i class="far fa-user"></i>
+                                    </div>
+                                    <input type="text" placeholder="Full Name" class="@error('name') is-invalid @enderror" name="name" required>
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="field-group">
+                                    <div class="icon">
+                                        <i class="far fa-phone"></i>
+                                    </div>
+                                    <input type="text" placeholder="Phone Number" class="@error('phone_number') is-invalid @enderror" name="phone_number" required>
+                                    @error('phone_number')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="field-group">
+                                    <div class="icon">
+                                        <i class="far fa-lock"></i>
+                                    </div>
+                                    <input type="password" placeholder="Password" class="@error('password') is-invalid @enderror" name="password" required>
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
+                                <div class="field-group">
+                                    <div class="icon">
+                                        <i class="far fa-lock"></i>
+                                    </div>
+                                    <input type="password" placeholder="Confirm Password" name="password_confirmation" required>
+                                </div>
+                                <div class="field-group">
+                                    <button type="submit">Create Account</button>
+                                </div>
+                            </div>
+                            <div class="form-note">
+                                <p>Already have an account? <a href="{{route('login')}}">Login</a></p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== Sign In End ======-->
 @endpush
 
 @section('content')
