@@ -32,6 +32,15 @@
                                 @endforeach
                             </select>
                         </div>
+
+                        <div class="form-group">
+                            <label for="" class="form-label">Account Name</label>
+                            <input type="text" class="form-control" inputmode="numeric" readonly name="account_name"  required placeholder="Account Name" id="account_name">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Proceed" name="" id="">
+                        </div>
                     </form>
 
                 </div>
