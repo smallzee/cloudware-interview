@@ -29,6 +29,11 @@
     <link rel="stylesheet" href="{{asset('assets/frontend/css/style.css')}}" />
     <!--====== Responsive CSS ======-->
     <link rel="stylesheet" href="{{asset('assets/frontend/css/responsive.css')}}" />
+
+    <script src="{{asset('assets/frontend/js/jquery-3.6.0.min.js')}}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/js/iziToast.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/izitoast@1.4.0/dist/css/iziToast.min.css">
 </head>
 <body class="app-landing-page">
 
@@ -36,14 +41,15 @@
     <img class="preloader-image" width="60" src="{{static_asset('preloader-logo.png')}}" alt="preloader" />
 </div>
 
+@include('flash')
+
 @include('layouts.frontend.header')
 
 @stack('content')
 
 @include('layouts.frontend.footer')
 
-<!--====== Jquery ======-->
-<script src="{{asset('assets/frontend/js/jquery-3.6.0.min.js')}}"></script>
+
 <!--====== Bootstrap ======-->
 <script src="{{asset('assets/frontend/js/bootstrap.min.js')}}"></script>
 <!--====== Slick slider ======-->

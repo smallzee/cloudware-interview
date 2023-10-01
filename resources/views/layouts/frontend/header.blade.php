@@ -34,7 +34,7 @@
                     </li>
                         @else
                         <li class="d-none d-md-block">
-                            <a href="" class="template-btn secondary-bg">
+                            <a href="{{route('dashboard.index')}}" class="template-btn secondary-bg">
                                 Dashboard <i class="fas fa-arrow-right"></i>
                             </a>
                         </li>

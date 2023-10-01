@@ -20,3 +20,8 @@ Route::get('/', function () {
 });
 
 
+Route::group(['prefix'=>'user'], function (){
+    Route::middleware(['IsUser'])->group(function (){
+        Route::resource('dashboard', \App\Http\Controllers\user\DashboardController::class);
+    });
+});
